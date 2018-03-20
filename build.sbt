@@ -139,7 +139,7 @@ lazy val akkaHttp = (project in file("akka-http")).
     commonSettings,
     crossScalaVersions := Vector(scala212, scala211),
     name := "gigahorse-akka-http",
-    libraryDependencies ++= Seq(akkaHttpCore, Dependencies.akkaHttp),
+    libraryDependencies ++= Seq(akkaHttpCore, Dependencies.akkaHttp, Dependencies.akkaStream),
     dependencyOverrides += sslConfig
   )
 

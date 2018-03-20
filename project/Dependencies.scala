@@ -10,7 +10,9 @@ object Dependencies {
   val scalatest = "org.scalatest" %% "scalatest" % "3.0.3"
   val sslConfig = "com.typesafe" %% "ssl-config-core" % "0.2.2"
   val reactiveStreams = "org.reactivestreams" % "reactive-streams" % "1.0.0"
-  val akkaHttpVersion = "10.0.9"
+  val akkaVersion = "2.5.11"
+  val akkaStream = "com.typesafe.akka" %% "akka-stream" % akkaVersion
+  val akkaHttpVersion = "10.1.0"
   val akkaHttpCore = "com.typesafe.akka" %% "akka-http-core" % akkaHttpVersion
   val akkaHttp = "com.typesafe.akka" %% "akka-http" % akkaHttpVersion
   val sbtIo = "org.scala-sbt" %% "io" % "1.0.3"
