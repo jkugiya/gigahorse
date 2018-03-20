@@ -12,6 +12,7 @@ object Dependencies {
   val reactiveStreams = "org.reactivestreams" % "reactive-streams" % "1.0.0"
   val akkaVersion = "2.5.11"
   val akkaStream = "com.typesafe.akka" %% "akka-stream" % akkaVersion
+  val akkaTypedInTest = "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion % Test
   val akkaHttpVersion = "10.1.0"
   val akkaHttpCore = "com.typesafe.akka" %% "akka-http-core" % akkaHttpVersion
   val akkaHttp = "com.typesafe.akka" %% "akka-http" % akkaHttpVersion

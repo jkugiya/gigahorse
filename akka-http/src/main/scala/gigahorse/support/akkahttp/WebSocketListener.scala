@@ -25,6 +25,7 @@ import scala.concurrent.{ Future, Promise }
 import akka.actor.{ ActorSystem, Props, PoisonPill }
 import akka.stream.actor.ActorPublisher
 import akka.http.scaladsl.model.ws.{ Message, TextMessage => XTextMessage, BinaryMessage => XBinaryMessage }
+import akka.http.scaladsl.Http
 import WebSocketEvent._
 
 // http://doc.akka.io/api/akka-http/current/akka/index.html
@@ -36,7 +37,7 @@ class WebSocketListener(
   protected var ws: WebSocket = null
   protected var open: Boolean = true
   val result = Promise[WebSocket]()
-  val forwarder = system.actorOf(Props[MessageForwarder])
+  val forwarder = Http(system).system.systemActorOf(Props[MessageForwarder], "gigahorse-message-forwarder")
   val publisher = ActorPublisher[Message](forwarder)
   val source: Source[Message, NotUsed] = Source.fromPublisher(publisher)
   val sink: Sink[Message, Future[Done]] =
